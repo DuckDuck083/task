@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Task Simulator — Productivity, Unfortunately</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <div class="brand"><span class="logo">TS</span><div><b>Task Simulator</b><small>Municipal Productivity Portal</small></div></div>
+    <div class="levelbox"><span id="levelLabel">LEVEL 1 · INTERN</span><div class="xpbar"><i id="xpFill"></i></div><small id="xpText">0 / 100 XP</small></div>
+    <div class="header-actions"><button class="icon-btn" id="soundBtn" title="Sound">♫</button><button class="icon-btn" id="resetBtn" title="Reset progress">↻</button></div>
+  </header>
+
+  <main class="shell">
+    <aside class="sidebar">
+      <nav>
+        <button class="nav active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav" data-page="tasks"><span>☑</span> Task Queue <em id="queueCount">4</em></button>
+        <button class="nav" data-page="achievements"><span>★</span> Achievements</button>
+        <button class="nav" data-page="statistics"><span>⌁</span> Statistics</button>
+      </nav>
+      <div class="employee-card"><small>EMPLOYEE STATUS</small><div><i class="status-dot"></i> Barely operational</div><p id="saveStatus">Autosaved just now</p></div>
+    </aside>
+
+    <section class="content">
+      <div class="page active" id="dashboardPage">
+        <div class="welcome"><div><span class="eyebrow">SUNDAY, AUGUST 2</span><h1>Good morning, <span id="employeeName">Employee #404</span>.</h1><p>Your workload has been carefully optimized to exceed available time.</p></div><div class="productivity"><span>PRODUCTIVITY SCORE</span><b id="score">0</b><small id="scoreDelta">▲ technically employed</small></div></div>
+        <div class="metrics">
+          <article><span class="metric-icon green">✓</span><div><small>TASKS COMPLETED</small><b id="completedMetric">0</b><em>All time</em></div></article>
+          <article><span class="metric-icon amber">⚡</span><div><small>CURRENT STREAK</small><b id="streakMetric">0</b><em>tasks without rage quit</em></div></article>
+          <article><span class="metric-icon blue">◷</span><div><small>TIME WASTED</small><b id="timeMetric">0m</b><em>Beautifully inefficient</em></div></article>
+          <article><span class="metric-icon purple">◆</span><div><small>ACHIEVEMENTS</small><b id="achievementMetric">0 / 12</b><em>Questionable honors</em></div></article>
+        </div>
+        <div class="grid">
+          <section class="panel queue-panel"><div class="panel-head"><div><span class="eyebrow">PRIORITY QUEUE</span><h2>Today's responsibilities</h2></div><button class="text-btn" data-goto="tasks">View all →</button></div><div id="dashboardTasks" class="task-list"></div></section>
+          <section class="panel daily"><span class="eyebrow">DAILY CHALLENGE</span><div class="daily-art">◫<i>!</i></div><h2 id="dailyTitle">Administrative Endurance</h2><p id="dailyDesc">Complete 3 tasks today without closing the tab.</p><div class="daily-progress"><i id="dailyFill"></i></div><div class="daily-foot"><span id="dailyText">0 / 3 completed</span><b>+150 XP</b></div></section>
+        </div>
+        <div class="ticker"><span>OFFICE NOTICE</span><div id="tickerText">The printer on Floor 3 is experiencing personal issues.</div></div>
+      </div>
+
+      <div class="page" id="tasksPage"><div class="page-title"><div><span class="eyebrow">WORK ALLOCATION SYSTEM</span><h1>Task Queue</h1><p>Completion is mandatory. Enjoyment is neither required nor monitored.</p></div><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="available">Available</button><button class="filter" data-filter="locked">Locked</button></div></div><div id="allTasks" class="task-grid"></div></div>
+      <div class="page" id="achievementsPage"><div class="page-title"><div><span class="eyebrow">PERMANENT RECORD</span><h1>Achievements</h1><p>Recognition in lieu of meaningful compensation.</p></div></div><div id="achievementGrid" class="achievement-grid"></div></div>
+      <div class="page" id="statisticsPage"><div class="page-title"><div><span class="eyebrow">PERFORMANCE SURVEILLANCE</span><h1>Statistics</h1><p>Every click has been lovingly documented.</p></div></div><div id="statsGrid" class="stats-grid"></div></div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modal">
+    <section class="task-modal">
+      <header><div><span class="eyebrow" id="modalDept">ACCOUNTS PAYABLE</span><h2 id="modalTitle">Pay Electric Bill</h2></div><div class="modal-timer" id="modalTimer">◷ 01:30</div><button id="closeModal">×</button></header>
+      <div class="task-brief" id="taskBrief"></div>
+      <div class="task-stage" id="taskStage"></div>
+      <footer><span id="attemptText">Attempt 1 · Please remain calm</span><button class="danger-link" id="giveUp">Give up responsibly</button></footer>
+    </section>
+  </div>
+  <div class="toast-stack" id="toasts"></div>
+  <div class="interrupt-layer" id="interruptLayer"></div>
+  <script src="game.js"></script>
+</body>
+</html>
