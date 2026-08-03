@@ -11,7 +11,7 @@
   <header class="topbar">
     <div class="brand"><span class="logo">TS</span><div><b>Task Simulator</b><small>Municipal Productivity Portal</small></div></div>
     <div class="levelbox"><span id="levelLabel">LEVEL 1 · INTERN</span><div class="xpbar"><i id="xpFill"></i></div><small id="xpText">0 / 100 XP</small></div>
-    <div class="header-actions"><button class="icon-btn" id="soundBtn" title="Sound">♫</button><button class="icon-btn" id="resetBtn" title="Reset progress">↻</button></div>
+    <div class="header-actions"><span class="clip-wallet" title="Performance paperclips"><b id="clipCount">0</b> ⌇</span><button class="icon-btn" id="soundBtn" title="Sound">♫</button><button class="icon-btn" id="resetBtn" title="Reset progress">↻</button></div>
   </header>
 
   <main class="shell">
@@ -34,6 +34,7 @@
           <article><span class="metric-icon blue">◷</span><div><small>TIME WASTED</small><b id="timeMetric">0m</b><em>Beautifully inefficient</em></div></article>
           <article><span class="metric-icon purple">◆</span><div><small>ACHIEVEMENTS</small><b id="achievementMetric">0 / 12</b><em>Questionable honors</em></div></article>
         </div>
+        <div class="campaign-strip"><div><span class="eyebrow">CAREER CAMPAIGN</span><b id="campaignText">0 / 68 TASKS</b></div><div class="campaign-track"><i id="campaignFill"></i></div><div class="combo-box"><small>CURRENT COMBO</small><b id="comboText">×1.0</b></div></div>
         <div class="grid">
           <section class="panel queue-panel"><div class="panel-head"><div><span class="eyebrow">PRIORITY QUEUE</span><h2>Today's responsibilities</h2></div><button class="text-btn" data-goto="tasks">View all →</button></div><div id="dashboardTasks" class="task-list"></div></section>
           <section class="panel daily"><span class="eyebrow">DAILY CHALLENGE</span><div class="daily-art">◫<i>!</i></div><h2 id="dailyTitle">Administrative Endurance</h2><p id="dailyDesc">Complete 3 tasks today without closing the tab.</p><div class="daily-progress"><i id="dailyFill"></i></div><div class="daily-foot"><span id="dailyText">0 / 3 completed</span><b>+150 XP</b></div></section>
@@ -52,7 +53,7 @@
       <header><div><span class="eyebrow" id="modalDept">ACCOUNTS PAYABLE</span><h2 id="modalTitle">Pay Electric Bill</h2></div><div class="modal-timer" id="modalTimer">◷ 01:30</div><button id="closeModal">×</button></header>
       <div class="task-brief" id="taskBrief"></div>
       <div class="task-stage" id="taskStage"></div>
-      <footer><span id="attemptText">Attempt 1 · Please remain calm</span><button class="danger-link" id="giveUp">Give up responsibly</button></footer>
+      <footer><span id="attemptText">Attempt 1 · Please remain calm</span><div><button class="boost-link" id="boostTime">⌇ 10 · Buy +30s</button><button class="danger-link" id="giveUp">Give up responsibly</button></div></footer>
     </section>
   </div>
   <div class="toast-stack" id="toasts"></div>
