@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Task Simulator — Productivity, Unfortunately</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shop.css">
 </head>
 <body>
   <div class="noise"></div>
@@ -19,6 +20,7 @@
       <nav>
         <button class="nav active" data-page="dashboard"><span>▦</span> Dashboard</button>
         <button class="nav" data-page="tasks"><span>☑</span> Task Queue <em id="queueCount">4</em></button>
+        <button class="nav" data-page="shop"><span>⌇</span> Supply Shop</button>
         <button class="nav" data-page="achievements"><span>★</span> Achievements</button>
         <button class="nav" data-page="statistics"><span>⌁</span> Statistics</button>
       </nav>
@@ -43,6 +45,7 @@
       </div>
 
       <div class="page" id="tasksPage"><div class="page-title"><div><span class="eyebrow">WORK ALLOCATION SYSTEM</span><h1>Task Queue</h1><p>Completion is mandatory. Enjoyment is neither required nor monitored.</p></div><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="available">Available</button><button class="filter" data-filter="locked">Locked</button></div></div><div id="allTasks" class="task-grid"></div></div>
+      <div class="page" id="shopPage"><div class="page-title"><div><span class="eyebrow">AUTHORIZED OFFICE SUPPLIES</span><h1>Paperclip Shop</h1><p>Convert hard-earned stationery into marginal workplace advantages.</p></div><div class="shop-balance"><b id="shopClips">0</b> paperclips available</div></div><div id="shopGrid" class="shop-grid"></div></div>
       <div class="page" id="achievementsPage"><div class="page-title"><div><span class="eyebrow">PERMANENT RECORD</span><h1>Achievements</h1><p>Recognition in lieu of meaningful compensation.</p></div></div><div id="achievementGrid" class="achievement-grid"></div></div>
       <div class="page" id="statisticsPage"><div class="page-title"><div><span class="eyebrow">PERFORMANCE SURVEILLANCE</span><h1>Statistics</h1><p>Every click has been lovingly documented.</p></div></div><div id="statsGrid" class="stats-grid"></div></div>
     </section>
